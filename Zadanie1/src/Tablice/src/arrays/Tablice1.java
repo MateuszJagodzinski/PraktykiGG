@@ -4,53 +4,55 @@ import java.util.Scanner;
 public class Tablice1 {
     public static void main(String[] args) {
 
+        System.out.println();
         //Przykład 5
-        double[] power = {23.45, -2.22, 45.90, 67.45, -56, 234.11, -34.8, 90.4, -77};
-        System.out.println("Element [0] = " + power[0]);
-        System.out.println("Element [1] = " + power[1]);
-        System.out.println("Element [2] = " + power[2]);
-        System.out.println("Element [3] = " + power[3]);
-        System.out.println("Element [4] = " + power[4]);
-        System.out.println("Element [5] = " + power[5]);
-        System.out.println("Element [6] = " + power[6]);
-        System.out.println("Element [7] = " + power[7]);
-        System.out.println("Element [8] = " + power[8]);
+        double[] power = {23.45, -2.22, 45.90, 67.45, -56, 234.11,-34.8, 90.4, -77};
+        double min = power[0];
+        double max = power[0];
+        int minA = 0;
+        int maxA = 0;
+        for(int i = 0; i < 9; i++)
+        {
+            if(max < power[i])
+            {
+                max = power[i];
+                maxA = i;
+            }
+            if(min > power[i])
+            {
+                min = power[i];
+                minA = i;
+            }
+            System.out.println("element [" + i + "] = " + power[i]);
+        }
+        power[maxA] = min;
+        power[minA] = max;
         System.out.println();
-        System.out.println("Po zamianie liczb najwiewksza z najmniejsza miejscami: ");
+        System.out.println("Po zamianie liczb:");
         System.out.println();
-        System.out.println("Element [0] = " + power[0]);
-        System.out.println("Element [1] = " + power[1]);
-        System.out.println("Element [2] = " + power[2]);
-        System.out.println("Element [3] = " + power[3]);
-        System.out.println("Element [4] = " + power[4]);
-        System.out.println("Element [5] = " + power[8]);
-        System.out.println("Element [6] = " + power[6]);
-        System.out.println("Element [7] = " + power[7]);
-        System.out.println("Element [8] = " + power[5]);
+        for( int j = 0; j < 9; j++)
+        {
+            System.out.println("element [" + j + "] = " + power[j]);
+        }
+        System.out.println();
+        System.out.println();
 
         //Przykład 6
+        System.out.println("Odwrócenie tablicy:\n");
+        int numberA;
+        int numberB;
+        for (int i = 0; i < power.length/2;i++){
+            numberA = (int) power[i];
+            numberB = (int) power[power.length - 1 - i];
+            power[i] = numberB;
+            power[power.length - 1 - i] = numberA;
+        }
+        for (int i = 0; i < power.length; i++){
+            System.out.println("Element [" + i + "] = " + power[i]);
+        }
+
         System.out.println();
-        System.out.println("Element [0] = " + power[0]);
-        System.out.println("Element [1] = " + power[1]);
-        System.out.println("Element [2] = " + power[2]);
-        System.out.println("Element [3] = " + power[3]);
-        System.out.println("Element [4] = " + power[4]);
-        System.out.println("Element [5] = " + power[8]);
-        System.out.println("Element [6] = " + power[6]);
-        System.out.println("Element [7] = " + power[7]);
-        System.out.println("Element [8] = " + power[5]);
         System.out.println();
-        System.out.println("PO ODWROCENIU: ");
-        System.out.println();
-        System.out.println("Element [0] = " + power[5]);
-        System.out.println("Element [1] = " + power[7]);
-        System.out.println("Element [2] = " + power[6]);
-        System.out.println("Element [3] = " + power[8]);
-        System.out.println("Element [4] = " + power[4]);
-        System.out.println("Element [5] = " + power[3]);
-        System.out.println("Element [6] = " + power[2]);
-        System.out.println("Element [7] = " + power[1]);
-        System.out.println("Element [8] = " + power[0]);
 
         //Przykład 7
         System.out.println();
